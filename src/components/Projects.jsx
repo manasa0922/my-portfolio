@@ -1,51 +1,50 @@
 function Projects() {
-    return(
-        <section>
-        <h2>Projects</h2>
+  return (
+    <section>
+      <h2>Projects</h2>
 
-        <div>
-            <h3>Career Hub</h3>
+      <div className="project-container">
 
-            <p>
-            An online job portal developed using Django that enables job
-            seekers to search and apply for jobs while allowing recruiters
-            to manage job postings.
-            </p>
+        <div className="project-card">
+          <h3>Career Hub</h3>
 
-            <p>
-            <strong>Technologies:</strong> Django, Python, HTML, CSS,
-            JavaScript, SQL
-            </p>
+          <p>
+            Online job portal developed using Django for job seekers and recruiters.
+          </p>
+
+          <p>
+            <strong>Tech:</strong> Django, Python, HTML, CSS, JavaScript, SQL
+          </p>
         </div>
 
-        <div>
-            <h3>Employee Attendance Tracking System</h3>
+        <div className="project-card">
+          <h3>Employee Attendance Tracking System</h3>
 
-            <p>
-            A web application that allows employees to mark attendance,
-            view attendance history, and enables administrators to manage
-            employee records and attendance reports.
-            </p>
+          <p>
+            Attendance management application with employee login,
+            attendance tracking, and reporting.
+          </p>
 
-            <p>
-            <strong>Technologies:</strong> ASP.NET, MySQL, Telerik UI
-            </p>
+          <p>
+            <strong>Tech:</strong> ASP.NET, MySQL, Telerik UI
+          </p>
         </div>
 
-        <div>
-            <h3>JavaScript Calculator</h3>
+        <div className="project-card">
+          <h3>JavaScript Calculator</h3>
 
-            <p>
-            A responsive calculator application with keyboard support
-            developed using HTML, CSS, and JavaScript.
-            </p>
+          <p>
+            Responsive calculator with keyboard support.
+          </p>
 
-            <p>
-            <strong>Technologies:</strong> HTML, CSS, JavaScript
-            </p>
+          <p>
+            <strong>Tech:</strong> HTML, CSS, JavaScript
+          </p>
         </div>
-        </section>
-    );
+
+      </div>
+    </section>
+  );
 }
 
 export default Projects;
