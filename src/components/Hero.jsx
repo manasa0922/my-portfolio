@@ -1,6 +1,14 @@
+import profilePic from "../assets/profile.png";
+
 function Hero() {
   return (
     <section className="hero">
+
+      <img
+        src={profilePic}
+        alt="Manasa S S"
+        className="profile-image"
+      />
       <h1>Hi, I'm Manasa S S 👋</h1>
 
       <h2>MCA Graduate</h2>
@@ -18,9 +26,22 @@ function Hero() {
       </p>
 
       <div className="hero-buttons">
-        <button>View Projects</button>
-        <button>Contact Me</button>
-      </div>
+        <a
+          href="https://github.com/manasa0922"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button>GitHub</button>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/manasa-s-s-4951b4256"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button>LinkedIn</button>
+        </a>
+</div>
     </section>
   );
 }
