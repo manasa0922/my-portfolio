@@ -1,30 +1,40 @@
-function Skills(){
+import { motion } from "framer-motion";
+import { skillGroups } from "../data/content";
+import { Section } from "./ui/Section";
+import { Card } from "./ui/Card";
+import { Badge } from "./ui/Badge";
+
+function Skills() {
   return (
-    <>
-    <section>
-    <h2>Skills</h2>
-
-    <div>
-        <h3>Frontend</h3>
-        <p>HTML, CSS, JavaScript, React</p>
-    </div>
-
-    <div>
-        <h3>Backend</h3>
-        <p>Python, Django, ASP.NET, ASP.NET Core MVC</p>
-    </div>
-
-    <div>
-        <h3>Database</h3>
-        <p>MySQL, SQL Server</p>
-    </div>
-
-    <div>
-        <h3>Tools</h3>
-        <p>Git, GitHub, VS Code, Visual Studio</p>
-    </div>
-    </section>
-    </>
+    <Section
+      id="skills"
+      eyebrow="Skills"
+      title="Tools I build with."
+      subtitle="Grouped by where they show up in my day-to-day work."
+    >
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {skillGroups.map((group, i) => (
+          <motion.div
+            key={group.group}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: i * 0.06 }}
+          >
+            <Card className="h-full p-6">
+              <h3 className="mb-4 font-display text-base font-semibold text-text">
+                {group.group}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <Badge key={item}>{item}</Badge>
+                ))}
+              </div>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+    </Section>
   );
 }
 

@@ -1,21 +1,30 @@
+import { motion } from "framer-motion";
+import { learning } from "../data/content";
+import { Section } from "./ui/Section";
+import { Badge } from "./ui/Badge";
+
 function Learning() {
   return (
-    <section>
-      <h2>Currently Learning</h2>
-
-      <p>
-        I am currently exploring Artificial Intelligence and Machine
-        Learning to expand my technical expertise.
-      </p>
-
-      <ul>
-        <li>Machine Learning Fundamentals</li>
-        <li>Data Preprocessing</li>
-        <li>Model Training</li>
-        <li>Stock Price Prediction</li>
-        <li>Retrieval-Augmented Generation (RAG)</li>
-      </ul>
-    </section>
+    <Section
+      id="learning"
+      eyebrow="Currently Exploring"
+      title="What I'm learning next."
+      subtitle="Expanding further into AI/ML on top of the RAG work I already do."
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-wrap gap-3"
+      >
+        {learning.map((item) => (
+          <Badge key={item} tone="accent">
+            {item}
+          </Badge>
+        ))}
+      </motion.div>
+    </Section>
   );
 }
 
